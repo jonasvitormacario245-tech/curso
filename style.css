@@ -1,0 +1,32 @@
+body{
+    background-image: url("./img/projeto.gif");
+    background-size:cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+
+    font-family: 'Pixelify Sans', cursive;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    text-align: center;
+    font-size: 20px;
+}
+
+.iniciar{
+    color: white;
+    text-align: center;
+}
+
+.iniciar button{
+    background-color: transparent;
+    color: white;
+    border: 1% solid white ;
+    padding: 10px ;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 15px;
+}
+
