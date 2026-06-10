@@ -1,0 +1,30 @@
+body {
+  text-align: center;
+  background: #111;
+  color: white;
+}
+
+.container {
+  background: white;
+  color: black;
+  padding: 20px;
+  margin: 50px auto;
+  width: 60%;
+  border-radius: 10px;
+}
+
+button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+#resultado {
+  margin-top: 20px;
+  font-size: 20px;
+}
+
+.certificado {
+  text-align: center;
+  padding: 50px;
+}

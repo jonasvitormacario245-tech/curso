@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<title>Prova de Lógica</title>
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h2>Prova de Lógica de Programação</h2>
+
+<p>1. O que é lógica de programação?</p>
+<input type="radio" name="q1" value="errado"> Um tipo de linguagem<br>
+<input type="radio" name="q1" value="certo"> Uma forma de pensar para resolver problemas<br>
+
+<p>2. Para que serve a lógica de programação?</p>
+<input type="radio" name="q2" value="errado"> Apenas para criar sites<br>
+<input type="radio" name="q2" value="certo"> Resolver problemas de forma organizada<br>
+
+<p>3. Qual é a base para aprender a programar?</p>
+<input type="radio" name="q3" value="errado"> HTML<br>
+<input type="radio" name="q3" value="certo"> Lógica de programação<br>
+
+<p>4. O que significa “quebrar uma ação em passos”?</p>
+<input type="radio" name="q4" value="errado"> Fazer tudo de uma vez<br>
+<input type="radio" name="q4" value="certo"> Dividir em etapas pequenas e organizadas<br>
+
+<p>5. Por que os passos precisam ser organizados?</p>
+<input type="radio" name="q5" value="errado"> Para deixar bonito<br>
+<input type="radio" name="q5" value="certo"> Para o computador entender corretamente<br>
+
+<p>6. O computador entende melhor:</p>
+<input type="radio" name="q6" value="errado"> Ideias vagas<br>
+<input type="radio" name="q6" value="certo"> Instruções claras e exatas<br>
+
+<p>7. Um exemplo de lógica do dia a dia seria:</p>
+<input type="radio" name="q7" value="errado"> Assistir TV<br>
+<input type="radio" name="q7" value="certo"> Fazer um bolo seguindo passos<br>
+
+<button onclick="finalizar()">Finalizar</button>
+
+<div id="resultado"></div>
+
+</div>
+
+<script>
+function finalizar() {
+  let pontos = 0;
+
+  const respostas = ["q1", "q2", "q3", "q4", "q5", "q6", "q7"];
+
+  respostas.forEach(q => {
+    const selecionado = document.querySelector(`input[name="${q}"]:checked`);
+    if (selecionado && selecionado.value === "certo") {
+      pontos++;
+    }
+  });
+
+  let nota = (pontos / respostas.length) * 10;
+
+  document.getElementById("resultado").innerHTML = `
+    <h3>Sua nota: ${nota.toFixed(1)}</h3>
+    <p>${nota >= 7 ? "Aprovado 🎉" : "Reprovado 😢"}</p>
+    <button onclick="gerarCertificado(${nota})">Gerar Certificado</button>
+  `;
+}
+
+function gerarCertificado(nota) {
+  document.body.innerHTML = `
+    <div class="certificado">
+      <h1>🎓 CERTIFICADO</h1>
+      <p>Curso: Lógica de Programação</p>
+      <p>Nota final:</p>
+      <h2>${nota.toFixed(1)}</h2>
+      <p>Parabéns 👾</p>
+    </div>
+  `;
+}
+</script>
+
+</body>
+</html>
