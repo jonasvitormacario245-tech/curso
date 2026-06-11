@@ -12,11 +12,11 @@
 <header class="iniciar">
     <h1>Curso de logica de programação</h1>
     
-        <button onclick="tocarMusica()">Start</button>
+        <button onclick="iniciar()">Start</button>
     
 </header>
 
-<audio id="musica" controls>
+<audio id="musica" loop>
     <source src="./audio/projeto1.mp3" type="audio/mpeg">
 </audio>
 
@@ -32,6 +32,22 @@
         window.location.href = "./html/pagina.html"; 
         }, 300);
     }
+
+    function iniciar() {
+  const audio = document.getElementById("musica");
+  
+  audio.volume = 0.5;
+
+  audio.play().then(() => {
+    // Só troca de página DEPOIS que começar a tocar
+    setTimeout(() => {
+      window.location.href = "./html/pagina.html";
+    }, 1500);
+  }).catch((erro) => {
+    alert("Clique novamente para iniciar o som");
+    console.log(erro);
+  });
+}
 
         
 
